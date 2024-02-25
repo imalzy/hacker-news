@@ -1,0 +1,53 @@
+.card-long {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  padding: 18px;
+  height: 82px;
+  box-shadow: 0 4px 4px 0 rgba(79, 97, 123, 0.08);
+  background: #fff;
+
+  &:hover {
+    background: #fff6f1;
+  }
+
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+
+    &__title {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      color: #242424;
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 13px;
+
+      &--separator{
+        width: 1px;
+        height: 12px;
+        background: #8b8b8b;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 8px;
+  }
+}
