@@ -1,7 +1,7 @@
 .card-long {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: row;
   gap: 8px;
   padding: 18px;
@@ -35,10 +35,52 @@
       flex-direction: row;
       gap: 13px;
 
-      &--separator{
+      &--text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        color: #808080;
+      }
+
+      &--separator {
         width: 1px;
         height: 12px;
         background: #8b8b8b;
+      }
+
+      &--last-updated {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 4px;
+
+        .--time {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 12px;
+          color: #8b8b8b;
+        }
+      }
+
+      &--badge {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 10px;
+
+        border-radius: 4px;
+        padding: 2px 10px;
+        width: 71px;
+        height: 19px;
+
+        background: #ff8780;
+
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 12px;
+        color: #fff;
       }
     }
   }
@@ -49,5 +91,23 @@
     justify-content: flex-end;
     flex-direction: row;
     gap: 8px;
+
+    button {
+      border: none !important;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 4px;
+      border-radius: 6px;
+      padding: 8px 10px;
+      height: 32px;
+      background: #ffeadc;
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 12px;
+      color: #f60;
+      align-items: center;
+    }
   }
 }
