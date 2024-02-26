@@ -1,3 +1,7 @@
+:host {
+width: 100%;
+}
+
 .card {
   display: flex !important;
   align-items: flex-start !important;
@@ -6,9 +10,8 @@
   gap: 10px !important;
   border-radius: 6px !important;
   padding: 18px 18px 14px 18px !important;
-  max-width: 496px !important;
   width: 100%;
-  height: 148px !important;
+  height: max-content !important;
   box-shadow: 0 2px 6px 0 rgba(79, 97, 123, 0.08) !important;
   background: #fff !important;
   border: none !important;
@@ -25,6 +28,8 @@
     line-height: 22px;
     color: #242424;
     margin-bottom: 14px;
+    height: 55px;
+    overflow: hidden;
   }
 
   &__content {
@@ -129,4 +134,36 @@
       }
     }
   }
+}
+
+.half-width {
+  width: 100%;
+}
+.full-width {
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+.twenty-width {
+  width: calc(20% + 20%);
+}
+.forty-width {
+  width: calc(40% + 20%);
+}
+.fifteen-width {
+  width: calc(15% + 20%);
+}
+.thirtyfive-width {
+  width: calc(35% + 20%);
+}
+
+/* Alignment classes */
+.start-align {
+  justify-self: start;
+}
+.end-align {
+  justify-self: end;
+}
+.align-center {
+  justify-self: center;
 }

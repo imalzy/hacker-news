@@ -1,3 +1,7 @@
+:host{
+  width: 100%;
+  grid-column: 1/-1;
+}
 .card-long {
   display: flex;
   align-items: center;

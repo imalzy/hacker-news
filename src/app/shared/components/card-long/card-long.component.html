@@ -1,10 +1,12 @@
 <div class="card-long">
   <div class="card-long__left">
     <div class="card-long__left__title">
-      Codeberg – Fast Open Source Alternative to GitHub
+      {{ topic.title }}
     </div>
     <div class="card-long__left__info">
-      <p class="card-long__left__info--text">274 points by oblio</p>
+      <p class="card-long__left__info--text">
+        {{ topic.score }} points by {{ topic.by }}
+      </p>
       <span class="card-long__left__info--separator"></span>
       <p class="card-long__left__info--text">codeberg.org</p>
       <span class="card-long__left__info--separator"></span>
@@ -15,20 +17,20 @@
           width="24"
           height="24"
         />
-        <p class="--time">4 hours ago</p>
+        <p class="--time">{{ topic.time | dateDiff }} ago</p>
       </div>
       <div class="card-long__left__info--badge">Trending</div>
     </div>
   </div>
   <div class="card-long__right">
-    <button type="button">
+    <button type="button" (click)="emitModal(topic)">
       <img
         ngSrc="./assets/images/comment.svg"
         alt="clock"
         width="24"
         height="24"
       />
-      95 Comment
+      {{ topic.kids?.length }} Comment
 
       <img
         ngSrc="./assets/images/arrow-right.svg"

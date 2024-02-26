@@ -1,1 +1,59 @@
-<p>topic-detail works!</p>
+<div class="modal-container">
+  <div class="modal-container__head">
+    <h1 class="modal-container__head--title">{{ fromParent.title }}</h1>
+    <div class="modal-container__head__detail">
+      <div class="modal-container__head__detail__left">
+        <p class="modal-container__head__detail__left--text">
+          {{ fromParent.score }} points by {{ fromParent.by }}
+        </p>
+        <span class="modal-container__head__detail__left--separator"></span>
+        <p class="modal-container__head__detail__left--text">codeberg.org</p>
+        <span class="modal-container__head__detail__left--separator"></span>
+        <div class="modal-container__head__detail__left--last-updated">
+          <img
+            ngSrc="./assets/images/clock.svg"
+            alt="clock"
+            width="16"
+            height="16"
+          />
+          <p class="--time">{{ fromParent.time | dateDiff }} ago ago</p>
+        </div>
+      </div>
+
+      <div class="modal-container__head__detail__right">
+        <img
+          ngSrc="./assets/images/comment-black.svg"
+          alt="clock"
+          width="16"
+          height="16"
+        />
+        <p class="--text">{{ fromParent.kids?.length }} Comment</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-container__body">
+    <div class="modal-container__body__wrapper">
+      <ng-container
+        *ngFor="
+          let comment of comments;
+          trackBy: commentIdentify;
+          let i = index
+        "
+      >
+        <div class="modal-container__body__wrapper__card" *ngIf="!comment.deleted">
+          <h1 class="modal-container__body__wrapper__card--commenter">
+            {{ comment.by }}
+          </h1>
+          <p
+            class="modal-container__body__wrapper__card--text"
+            [innerHTML]="comment.text"
+          ></p>
+        </div>
+        <p class="modal-container__body__wrapper__time" *ngIf="!comment.deleted">
+          {{ comment.time | dateDiff }} ago
+        </p>
+      </ng-container>
+    </div>
+  </div>
+</div>

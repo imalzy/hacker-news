@@ -1,4 +1,16 @@
 <div class="container mt-3">
-  <app-card></app-card>
-  <app-card-long></app-card-long>
+  <ng-container
+    *ngFor="let topic of topics; trackBy: topicIdentify; let i = index"
+  >
+    <app-card
+      [topic]="topic"
+      (openModal)="emitModal($event)"
+      *ngIf="getGridClass(i) === 'half-width'"
+    ></app-card>
+    <app-card-long
+      [topic]="topic"
+      (openModal)="emitModal($event)"
+      *ngIf="getGridClass(i) === 'full-width'"
+    ></app-card-long>
+  </ng-container>
 </div>
