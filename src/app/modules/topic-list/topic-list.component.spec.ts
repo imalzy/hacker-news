@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopicListComponent } from './topic-list.component';
+import { TopicService } from 'src/app/core/services/topics/topic.service';
 
 describe('TopicListComponent', () => {
   let component: TopicListComponent;

@@ -35,12 +35,16 @@ export class TopicListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.init();
+  }
+
+  init():void{
     this.topicService
-      .retrieveTopics()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((res) => {
-        this.topics = [...res];
-      });
+    .retrieveTopics()
+    .pipe(takeUntil(this.unsubscribe$))
+    .subscribe((res) => {
+      this.topics = [...res];
+    });
   }
 
   ngOnDestroy(): void {

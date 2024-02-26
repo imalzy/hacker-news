@@ -22,11 +22,13 @@ export class TopicDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const id = Number(this.fromParent.id);
+    console.log(id)
     this.topicServce
       .getComments(id)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((res) => {
         this.comments = [...res]
+        console.log(res)
       });
   }
 
